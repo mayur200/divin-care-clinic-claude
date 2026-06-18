@@ -1955,6 +1955,63 @@ select:focus-visible {
   color: var(--teal);
 }
 
+/* Developer credit */
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: #64748B;
+  margin-left: 4px;
+}
+
+.footer-credit-divider {
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1;
+  margin-right: 2px;
+}
+
+.footer-credit-heart {
+  color: #EC4899;
+  font-size: 0.9rem;
+  display: inline-block;
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1);   }
+  14%       { transform: scale(1.22); }
+  28%       { transform: scale(1);   }
+  42%       { transform: scale(1.16); }
+  56%       { transform: scale(1);   }
+}
+
+.footer-credit-link {
+  color: var(--teal) !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.footer-credit-link:hover {
+  color: var(--primary) !important;
+  border-bottom-color: var(--primary);
+}
+
+@media (max-width: 575.98px) {
+  .footer-credit {
+    display: block;
+    margin-top: 6px;
+    margin-left: 0;
+  }
+  .footer-credit-divider {
+    display: none;
+  }
+}
+
 /* ---------------------------------------------------------------------
    22. STICKY MOBILE BAR + FLOATING BUTTONS
    --------------------------------------------------------------------- */
