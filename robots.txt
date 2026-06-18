@@ -1,0 +1,13 @@
+# =====================================================================
+# Divine Care Clinic - Complete Family Health
+# robots.txt
+# =====================================================================
+
+User-agent: *
+Allow: /
+
+# Disallow indexing of non-content assets (optional, safe defaults)
+Disallow: /icons/
+
+# Sitemap location
+Sitemap: https://www.divinecareclinic.in/sitemap.xml

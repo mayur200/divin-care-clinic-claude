@@ -1,0 +1,57 @@
+{
+  "name": "Divine Care Clinic - Complete Family Health",
+  "short_name": "Divine Care Clinic",
+  "description": "Expert Gynecology, Obstetrics, Pregnancy Care, Infertility Treatment, Laparoscopic Surgery and Family Healthcare in Malad East & Goregaon East, Mumbai.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0EA5E9",
+  "lang": "en-IN",
+  "categories": ["medical", "health", "business"],
+  "icons": [
+    {
+      "src": "icons/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Appointment",
+      "short_name": "Appointment",
+      "url": "/#appointment",
+      "description": "Book an appointment at Divine Care Clinic"
+    },
+    {
+      "name": "Call Clinic",
+      "short_name": "Call",
+      "url": "tel:+918591233993",
+      "description": "Call Divine Care Clinic"
+    }
+  ]
+}
