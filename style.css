@@ -1190,6 +1190,7 @@ select:focus-visible {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 180px;
+  grid-auto-flow: dense;
   gap: 14px;
 }
 
@@ -1997,8 +1998,8 @@ select:focus-visible {
 }
 
 .footer-credit-link:hover {
-  color: var(--primary) !important;
-  border-bottom-color: var(--primary);
+  color: var(--teal-deep) !important;
+  border-bottom-color: var(--teal-deep);
 }
 
 @media (max-width: 575.98px) {
@@ -2106,6 +2107,7 @@ select:focus-visible {
   border-radius: 50%;
   background: var(--ink);
   color: var(--white);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;

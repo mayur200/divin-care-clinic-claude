@@ -363,14 +363,14 @@
       var message = appointmentForm.querySelector('#apptMessage').value.trim();
 
       /* Build a pre-filled WhatsApp message for the clinic */
-      var waText = 'New Appointment Request — Divine Care Clinic%0A%0A' +
-        'Name: ' + encodeURIComponent(name) + '%0A' +
-        'Phone: ' + encodeURIComponent(phone) + '%0A' +
-        'Email: ' + encodeURIComponent(email) + '%0A' +
-        'Preferred Doctor: ' + encodeURIComponent(doctor) +
-        (message ? '%0AMessage: ' + encodeURIComponent(message) : '');
+      var messageBody = 'New Appointment Request — Divine Care Clinic\n\n' +
+        'Name: ' + name + '\n' +
+        'Phone: ' + phone + '\n' +
+        'Email: ' + email + '\n' +
+        'Preferred Doctor: ' + doctor +
+        (message ? '\nMessage: ' + message : '');
 
-      var waUrl = 'https://wa.me/' + CLINIC_WHATSAPP_NUMBER + '?text=' + waText;
+      var waUrl = 'https://wa.me/' + CLINIC_WHATSAPP_NUMBER + '?text=' + encodeURIComponent(messageBody);
 
       /* Show success message */
       if (formSuccessMsg) {
