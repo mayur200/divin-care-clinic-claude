@@ -186,6 +186,10 @@ select:focus-visible {
   color: var(--teal-deep);
 }
 
+.eyebrow--blue {
+  color: var(--blue-deep);
+}
+
 .section-title {
   font-size: clamp(1.9rem, 4.2vw, 2.7rem);
   font-weight: 600;
@@ -710,11 +714,13 @@ select:focus-visible {
 .about-media-tag .tag-title {
   font-weight: 700;
   font-size: 1rem;
+  display: block;
 }
 
 .about-media-tag .tag-sub {
   font-size: 0.8rem;
   color: var(--ink-soft);
+  display: block;
 }
 
 .about-points {
@@ -1458,18 +1464,20 @@ select:focus-visible {
 }
 
 .dcc-accordion .accordion-button::after {
-  background-image: none;
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  content: "\f067";
+  background-image: none !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  content: "\f067" !important;
   color: var(--blue-deep);
   font-size: 0.95rem;
+  width: auto;
+  height: auto;
   transition: transform 0.3s ease;
 }
 
 .dcc-accordion .accordion-button:not(.collapsed)::after {
-  content: "\f068";
-  transform: rotate(180deg);
+  content: "\f068" !important;
+  transform: rotate(0deg);
 }
 
 .dcc-accordion .accordion-body {
@@ -1722,11 +1730,16 @@ select:focus-visible {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--line);
+  min-height: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .map-wrap iframe {
   width: 100%;
-  height: 420px;
+  height: 100%;
+  min-height: 420px;
   border: 0;
   display: block;
 }
@@ -2254,6 +2267,10 @@ select:focus-visible {
     grid-row: span 1;
   }
 
+  .gallery-item.hidden-item {
+    display: none;
+  }
+
   .floating-appointment-btn span {
     display: none;
   }
@@ -2311,7 +2328,12 @@ select:focus-visible {
     grid-auto-rows: 150px;
   }
 
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
   .map-wrap iframe {
+    min-height: 320px;
     height: 320px;
   }
 
@@ -2348,6 +2370,10 @@ select:focus-visible {
     grid-auto-rows: 130px;
   }
 
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
   .hero-visual-chip {
     right: 0;
   }
@@ -2360,6 +2386,14 @@ select:focus-visible {
 
   .dcc-brand-text .brand-name {
     font-size: 1rem;
+  }
+
+  .about-points {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    padding: 20px 0 0 0;
   }
 }
 
