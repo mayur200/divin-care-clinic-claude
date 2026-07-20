@@ -158,7 +158,15 @@
       galleryItems.forEach(function (item) {
         var category = item.getAttribute('data-filter');
         var show = filter === 'all' || category === filter;
-        item.style.display = show ? '' : 'none';
+        if (show) {
+          item.style.display = '';
+          item.style.opacity = '1';
+          item.style.pointerEvents = '';
+        } else {
+          item.style.display = 'none';
+          item.style.opacity = '0';
+          item.style.pointerEvents = 'none';
+        }
       });
     });
   });
@@ -211,6 +219,7 @@
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
   }
 
@@ -219,6 +228,7 @@
     lightbox.classList.remove('active');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
     currentLightboxIndex = -1;
   }
 
@@ -326,6 +336,11 @@
     if (phoneInput) {
       phoneInput.addEventListener('input', function () {
         phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '').slice(0, 10);
+      });
+      phoneInput.addEventListener('paste', function (e) {
+        setTimeout(function () {
+          phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '').slice(0, 10);
+        }, 0);
       });
     }
 
