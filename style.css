@@ -2031,18 +2031,25 @@ select:focus-visible {
    --------------------------------------------------------------------- */
 .sticky-mobile-bar {
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1100;
-  display: none;
-  background: var(--white);
-  box-shadow: 0 -6px 24px rgba(30, 41, 59, 0.12);
-  border-top: 1px solid var(--line);
+  width: 100%;
+  max-width: 540px;     /* matches Bootstrap sm container */
+  z-index: 9999;
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 .sticky-mobile-bar .row {
   margin: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.sticky-mobile-bar .row > [class*="col-"] {
+  padding: 0;
+  min-width: 0;   /* allow shrinking so labels don't push siblings off-screen */
+  flex: 1 1 0;
 }
 
 .sticky-mobile-bar a {
@@ -2050,15 +2057,20 @@ select:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 10px 4px 8px;
-  font-size: 0.7rem;
+  gap: 3px;
+  padding: 9px 2px 8px;
+  font-size: 0.64rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .sticky-mobile-bar a i {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 .sticky-mobile-bar a.sb-call {
@@ -2079,6 +2091,15 @@ select:focus-visible {
 .sticky-mobile-bar a.sb-directions {
   background: var(--pink);
   color: var(--white);
+}
+
+/* Prevent page content from hiding behind the bar */
+@media (max-width: 767px) {
+  body { padding-bottom: 70px; }
+}
+
+@media (min-width: 768px) {
+  .sticky-mobile-bar { display: none !important; }
 }
 
 .floating-appointment-btn {
@@ -2423,6 +2444,61 @@ select:focus-visible {
   .hero-visual {
     padding: 20px 0 0 0;
   }
+}
+@media (max-width: 767px) {
+  html, body {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+
+  /* Let the page content go edge-to-edge */
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 100%;
+  }
+
+  /* Kill Bootstrap .row negative margins that create side gaps */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.services-category-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.services-category-head h3 {
+  flex: 1 1 auto;
+  min-width: 0;              /* allows the text to shrink/wrap */
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+  margin: 0;
+}
+
+.services-category-head .cat-icon {
+  flex: 0 0 auto;
+}
+
+.services-category-head .cat-line {
+  flex: 0 1 40px;            /* line shrinks first instead of pushing text out */
+  min-width: 0;
+  height: 2px;
+  background: currentColor;
+  opacity: .3;
 }
 
 /* Print */
